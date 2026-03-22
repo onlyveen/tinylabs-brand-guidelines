@@ -1234,133 +1234,89 @@
       border-radius: 999px;
     }
 
-    /* ── OBJECTS BAND ───────────────────────────────────────── */
-    .objects-band {
-      background: var(--dark);
-      overflow: hidden;
-      padding: 80px 0 0;
-      position: relative;
-    }
-
-    .objects-band::before {
-      content: '';
+    /* ── HERO OBJECTS ───────────────────────────────────────── */
+    .hero-obj {
       position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(var(--green-rgb), 0.07) 0%, transparent 70%);
       pointer-events: none;
+      z-index: 1;
     }
 
-    .objects-track {
-      display: flex;
-      align-items: flex-end;
-      gap: 0;
-      animation: objDrift 28s linear infinite;
-      width: max-content;
-    }
-
-    @keyframes objDrift {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .obj-wrap {
-      position: relative;
-      flex-shrink: 0;
-    }
-
-    .obj-wrap img {
+    .hero-obj img {
       display: block;
       object-fit: contain;
-      filter: drop-shadow(0 40px 60px rgba(0,0,0,0.55));
-      transition: transform 0.6s cubic-bezier(.22,.68,0,1.2), filter 0.4s;
     }
 
-    .obj-wrap:hover img {
-      filter: drop-shadow(0 56px 80px rgba(0,0,0,0.7)) drop-shadow(0 0 40px rgba(var(--green-rgb),0.25));
-    }
-
-    /* Individual sizes, rotations & offsets for abstract feel */
-    .obj-wrap--1 {
-      width: 320px;
-      padding: 0 40px;
-      transform: translateY(20px);
-    }
-    .obj-wrap--1 img {
-      width: 220px;
-      transform: rotate(-14deg) translateY(-10px);
-      animation: floatA 6s ease-in-out infinite;
-    }
-    .obj-wrap--1:hover img {
-      transform: rotate(-8deg) translateY(-24px) scale(1.06);
-    }
-
-    .obj-wrap--2 {
+    /* Rocket — top left, tilted */
+    .hero-obj--1 {
+      top: -20px;
+      left: -60px;
       width: 280px;
-      padding: 0 24px;
-      transform: translateY(-10px);
     }
-    .obj-wrap--2 img {
-      width: 190px;
-      transform: rotate(10deg) translateY(0px);
-      animation: floatB 7.5s ease-in-out infinite;
-    }
-    .obj-wrap--2:hover img {
-      transform: rotate(16deg) translateY(-20px) scale(1.08);
+    .hero-obj--1 img {
+      width: 100%;
+      transform: rotate(-22deg);
+      filter: drop-shadow(0 32px 48px rgba(0,0,0,0.5));
+      animation: floatA 7s ease-in-out infinite;
     }
 
-    .obj-wrap--3 {
-      width: 400px;
-      padding: 0 32px;
-      transform: translateY(30px);
+    /* Gear — top right, half-cropped */
+    .hero-obj--2 {
+      top: -40px;
+      right: -80px;
+      width: 300px;
     }
-    .obj-wrap--3 img {
+    .hero-obj--2 img {
+      width: 100%;
+      transform: rotate(15deg);
+      filter: drop-shadow(0 24px 40px rgba(0,0,0,0.45));
+      animation: floatB 9s ease-in-out infinite;
+    }
+
+    /* ABC — bottom left */
+    .hero-obj--3 {
+      bottom: -10px;
+      left: -40px;
       width: 320px;
-      transform: rotate(-6deg) translateY(10px);
+    }
+    .hero-obj--3 img {
+      width: 100%;
+      transform: rotate(10deg);
+      filter: drop-shadow(0 28px 44px rgba(0,0,0,0.5));
       animation: floatC 8s ease-in-out infinite;
     }
-    .obj-wrap--3:hover img {
-      transform: rotate(-2deg) translateY(-16px) scale(1.05);
-    }
 
-    .obj-wrap--4 {
-      width: 340px;
-      padding: 0 40px;
-      transform: translateY(10px);
+    /* Palette — bottom right */
+    .hero-obj--4 {
+      bottom: -30px;
+      right: -60px;
+      width: 300px;
     }
-    .obj-wrap--4 img {
-      width: 260px;
-      transform: rotate(18deg) translateY(-6px);
-      animation: floatD 9s ease-in-out infinite;
-    }
-    .obj-wrap--4:hover img {
-      transform: rotate(12deg) translateY(-22px) scale(1.07);
+    .hero-obj--4 img {
+      width: 100%;
+      transform: rotate(-18deg);
+      filter: drop-shadow(0 24px 40px rgba(0,0,0,0.45));
+      animation: floatD 10s ease-in-out infinite;
     }
 
     @keyframes floatA {
-      0%, 100% { transform: rotate(-14deg) translateY(-10px); }
-      50%       { transform: rotate(-11deg) translateY(-28px); }
+      0%, 100% { transform: rotate(-22deg) translateY(0px); }
+      50%       { transform: rotate(-19deg) translateY(-18px); }
     }
     @keyframes floatB {
-      0%, 100% { transform: rotate(10deg) translateY(0px); }
-      50%       { transform: rotate(13deg) translateY(-22px); }
+      0%, 100% { transform: rotate(15deg) translateY(0px); }
+      50%       { transform: rotate(12deg) translateY(-14px); }
     }
     @keyframes floatC {
-      0%, 100% { transform: rotate(-6deg) translateY(10px); }
-      50%       { transform: rotate(-4deg) translateY(-14px); }
+      0%, 100% { transform: rotate(10deg) translateY(0px); }
+      50%       { transform: rotate(13deg) translateY(-16px); }
     }
     @keyframes floatD {
-      0%, 100% { transform: rotate(18deg) translateY(-6px); }
-      50%       { transform: rotate(15deg) translateY(-26px); }
-    }
-
-    /* pause drift on hover */
-    .objects-band:hover .objects-track {
-      animation-play-state: paused;
+      0%, 100% { transform: rotate(-18deg) translateY(0px); }
+      50%       { transform: rotate(-15deg) translateY(-20px); }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .objects-track { animation: none; }
-      .obj-wrap img  { animation: none; }
+      .hero-obj img { animation: none; }
     }
 
     /* ── RESPONSIVE ─────────────────────────────────────────── */
@@ -1561,19 +1517,11 @@
         left: 16px;
       }
 
-      /* Objects band */
-      .objects-band {
-        padding: 48px 0 0;
-      }
-
-      .obj-wrap--1 { width: 200px; }
-      .obj-wrap--1 img { width: 140px; }
-      .obj-wrap--2 { width: 180px; }
-      .obj-wrap--2 img { width: 120px; }
-      .obj-wrap--3 { width: 240px; }
-      .obj-wrap--3 img { width: 200px; }
-      .obj-wrap--4 { width: 200px; }
-      .obj-wrap--4 img { width: 160px; }
+      /* Hero objects — shrink on mobile */
+      .hero-obj--1 { width: 160px; left: -30px; }
+      .hero-obj--2 { width: 170px; right: -40px; }
+      .hero-obj--3 { width: 180px; left: -20px; }
+      .hero-obj--4 { width: 160px; right: -30px; }
     }
 
     /* Small mobile – 380px */
@@ -1610,6 +1558,11 @@
       <div class="blob blob-2"></div>
       <div class="blob blob-3"></div>
     </div>
+    <!-- decorative objects -->
+    <div class="hero-obj hero-obj--1" aria-hidden="true"><img src="header/2.png" alt="" /></div>
+    <div class="hero-obj hero-obj--2" aria-hidden="true"><img src="header/1.png" alt="" /></div>
+    <div class="hero-obj hero-obj--3" aria-hidden="true"><img src="header/3.png" alt="" /></div>
+    <div class="hero-obj hero-obj--4" aria-hidden="true"><img src="header/4.png" alt="" /></div>
     <h1 class="hero-title">
       <span class="hero-title-line1">Unbox the</span>
       <span class="hero-title-line2">Curiosity</span>
@@ -2591,21 +2544,6 @@
 
     </div>
   </section>
-
-  <!-- OBJECTS -->
-  <div class="objects-band">
-    <div class="objects-track">
-      <div class="obj-wrap obj-wrap--1"><img src="header/1.png" alt="" /></div>
-      <div class="obj-wrap obj-wrap--2"><img src="header/2.png" alt="" /></div>
-      <div class="obj-wrap obj-wrap--3"><img src="header/3.png" alt="" /></div>
-      <div class="obj-wrap obj-wrap--4"><img src="header/4.png" alt="" /></div>
-      <!-- duplicate for seamless scroll -->
-      <div class="obj-wrap obj-wrap--1" aria-hidden="true"><img src="header/1.png" alt="" /></div>
-      <div class="obj-wrap obj-wrap--2" aria-hidden="true"><img src="header/2.png" alt="" /></div>
-      <div class="obj-wrap obj-wrap--3" aria-hidden="true"><img src="header/3.png" alt="" /></div>
-      <div class="obj-wrap obj-wrap--4" aria-hidden="true"><img src="header/4.png" alt="" /></div>
-    </div>
-  </div>
 
   <!-- FOOTER -->
   <footer>
