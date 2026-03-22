@@ -63,6 +63,8 @@
       list-style: none;
       display: flex;
       gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     nav.topnav ul li a {
@@ -1231,6 +1233,217 @@
       background: rgba(var(--green-rgb), 0.3);
       border-radius: 999px;
     }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────── */
+
+    /* Tablet – 900px */
+    @media (max-width: 900px) {
+      .brand-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .color-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .color-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .logo-grid-3 {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .visual-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cs-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .cs-left .clearspace-demo {
+        height: auto;
+      }
+    }
+
+    /* Mobile – 640px */
+    @media (max-width: 640px) {
+      /* Nav */
+      nav.topnav {
+        bottom: 16px;
+        padding: 12px;
+        width: calc(100% - 32px);
+        border-radius: 20px;
+      }
+
+      nav.topnav ul {
+        gap: 2px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav.topnav ul li a {
+        font-size: 12px;
+        padding: 7px 12px;
+      }
+
+      /* Hero */
+      .hero {
+        padding: 80px 24px 120px;
+      }
+
+      .hero-title-line1 {
+        font-size: clamp(28px, 8vw, 50px);
+      }
+
+      .hero-title-line2 {
+        font-size: clamp(60px, 18vw, 130px);
+      }
+
+      .hero-logo {
+        height: 52px;
+        margin-top: 32px;
+      }
+
+      /* Sections */
+      section {
+        padding: 64px 0;
+      }
+
+      .container {
+        padding: 0 20px;
+      }
+
+      .section-desc {
+        font-size: 15px;
+        margin-bottom: 40px;
+      }
+
+      /* Brand */
+      .brand-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Color */
+      .color-grid-4 {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .color-grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .swatch-top {
+        height: 120px;
+      }
+
+      /* Typography weight rows */
+      .type-weight-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 16px 20px;
+      }
+
+      .type-weight-num {
+        display: none;
+      }
+
+      .type-specimen {
+        padding: 24px 20px;
+      }
+
+      /* Type header flex row */
+      .type-font-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      /* Logo */
+      .logo-grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .logo-grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .logo-preview {
+        height: 180px;
+        padding: 28px;
+      }
+
+      /* Don'ts grid */
+      .du-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .du-cell {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .du-right img {
+        width: 100%;
+      }
+
+      /* Clear space */
+      .cs-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .clearspace-demo {
+        padding: 32px 20px;
+      }
+
+      .logo-rules-bg {
+        padding: 24px 20px;
+      }
+
+      /* Visual grid */
+      .visual-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* VL PDF row */
+      .vl-pdf-row {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 24px;
+        gap: 16px;
+      }
+
+      .vl-pdf-btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* Footer */
+      footer {
+        padding: 40px 24px 140px;
+      }
+
+      /* Toast moves above nav */
+      .toast {
+        bottom: 100px;
+        right: 16px;
+        left: 16px;
+      }
+    }
+
+    /* Small mobile – 380px */
+    @media (max-width: 380px) {
+      .color-grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      nav.topnav ul li a {
+        font-size: 11px;
+        padding: 6px 10px;
+      }
+    }
   </style>
 </head>
 
@@ -1583,7 +1796,7 @@
       <p class="section-desc">Two typefaces work in harmony &mdash; DynaPuff brings organic, playful energy; Geist
         delivers technological precision. Together they express the full Tinylabs story.</p>
       <div class="type-section">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;">
+        <div class="type-font-header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;">
           <div class="type-font-label">Primary Display Typeface <span class="type-font-badge">Google Fonts</span></div>
           <a class="type-font-link" href="https://fonts.google.com/specimen/DynaPuff" target="_blank"
             rel="noopener"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -1634,7 +1847,7 @@
         </div>
       </div>
       <div class="type-section">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;">
+        <div class="type-font-header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;">
           <div class="type-font-label">Secondary Body Typeface <span class="type-font-badge">Google Fonts</span></div>
           <a class="type-font-link" href="https://fonts.google.com/specimen/Geist" target="_blank" rel="noopener"><svg
               width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
